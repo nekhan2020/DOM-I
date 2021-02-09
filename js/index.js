@@ -47,7 +47,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 /* 
----------------------------------------------- nav ------------------------------------
+---------------------------- nav -------------------------------
  */
 
 let nav = document.querySelectorAll("nav a");
@@ -58,8 +58,37 @@ nav[3].textContent = siteContent["nav"]["nav-item-4"];
 nav[4].textContent = siteContent["nav"]["nav-item-5"];
 nav[5].textContent = siteContent["nav"]["nav-item-6"];
 
+// changing nav color -- stuck
+
+// document.querySelector("body").style.color = "green"; -- was just a test
+
+// nav.querySelector("nav a").style.color = "green"; -- changes only 1 a tag to green
+
+console.log(document.querySelector("nav a"));
+console.log(document.querySelectorAll("nav a"));
+// document.querySelectorAll("nav a").style.color = "green";
+
+// document.querySelector("nav a").array.forEach(element => {
+
+// });.style.color = "green";
+
+nav.forEach((element) => (element.style.color = "green"));
+
+// appendchild()
+
+let appendNav = document.createElement("a");
+appendNav.textContent = "Cookies";
+appendNav.style.color = "green";
+document.querySelector("nav").appendChild(appendNav);
+
+// prepend
+let prependNav = document.createElement("a");
+prependNav.textContent = "Infinity Stone";
+prependNav.style.color = "green";
+document.querySelector("nav").prepend(prependNav);
+
 /* 
----------------------------------------------- cta ------------------------------------
+------------------------------ cta ------------------------------
  */
 
 let button = document.querySelector("button");
@@ -74,7 +103,7 @@ let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
 /* 
----------------------------------------------- main content ----------------------------
+------------------------------ main content --------------------------
  */
 
 let featuresContent = document.querySelectorAll(
@@ -104,7 +133,7 @@ featuresH4[4].textContent = siteContent["main-content"]["vision-h4"];
 featuresContent[4].textContent = siteContent["main-content"]["vision-content"];
 
 /* 
------------------------------------------- contact ------------------------------------
+--------------------------------- contact ------------------------------------
  */
 let contactH4 = document.querySelector(".contact h4");
 contactH4.textContent = siteContent["contact"]["contact-h4"];
@@ -123,7 +152,7 @@ addressBreak.innerHTML = siteContent["contact"]["address"]
 // ctah1.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
 /* 
----------------------------------------------- footer ------------------------------------
+----------------------------------- footer ------------------------------------
  */
 
 let copyright = document.querySelector("footer");
