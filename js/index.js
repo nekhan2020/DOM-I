@@ -68,6 +68,8 @@ button.textContent = siteContent["cta"]["button"];
 let ctah1 = document.querySelector(".cta h1"); // need a break
 ctah1.textContent = siteContent["cta"]["h1"];
 
+ctah1.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
+
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
@@ -106,10 +108,19 @@ featuresContent[4].textContent = siteContent["main-content"]["vision-content"];
  */
 let contactH4 = document.querySelector(".contact h4");
 contactH4.textContent = siteContent["contact"]["contact-h4"];
+
 let contactP = document.querySelectorAll(".contact p");
 contactP[0].textContent = siteContent["contact"]["address"]; // need to add a break
 contactP[1].textContent = siteContent["contact"]["phone"];
 contactP[2].textContent = siteContent["contact"]["email"];
+
+let addressBreak = document.querySelector(".contact p");
+addressBreak.innerHTML = siteContent["contact"]["address"]
+  .split("t S")
+  .join("t <br> S");
+
+// let ctah1 = document.querySelector(".cta h1");
+// ctah1.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
 /* 
 ---------------------------------------------- footer ------------------------------------
